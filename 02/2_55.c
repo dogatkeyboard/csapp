@@ -18,3 +18,10 @@ int main() {
 
     return 0;
 }
+
+/**
+ * I was only able to run this code on a (1) linux-x86-64 and a (2) windows 10
+ * box. It turns out, just as the book outlines in their example runs, that
+ * both systems use LITTLE ENDIAN byte ordering.
+ * 
+ */
