@@ -44,3 +44,29 @@ int is_little_endian() {
     }
     return 0;
 }
+
+/* Get most significant byte from x */
+int get_msb(int x) {
+    /* Shift by w-8 */
+    int shift_val = (sizeof(int)-1) << 3;
+    /* Arithmetic shift */
+    int xright = x >> shift_val;
+    /* Zero all but LSB */
+    return xright & 0xFF;
+}
+
+/* 2.60 solution */
+/* note: unsigned is syntax sugar for unsigned int */
+unsigned replace_byte(unsigned x, int i, unsigned char b) {
+    byte_pointer bp = (byte_pointer) &x;
+    
+    // This function is a recipe for disaster because of the i parameter
+    // How am I supposed to deal with it potentially being larger than
+    // the number of bytes in an unsigned int? 
+    if (i < 0 || i > sizeof(unsigned int)) {
+        return 0;
+    }
+
+    bp[i] = b;
+    return x;
+}
