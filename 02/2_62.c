@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../common/csapp.h"
 
-int int_shifts_are_arethmetic() {
+int int_shifts_are_arithmetic() {
     // 10000000 00000000 00000000 00000000
     int x = 0x80000000;
 
@@ -21,7 +21,7 @@ int int_shifts_are_arethmetic() {
 
 int main() {
 
-    printf("arithmetic right shift: %d\n", int_shifts_are_arethmetic());
+    printf("arithmetic right shift: %d\n", int_shifts_are_arithmetic());
 
     return 0;
 }
